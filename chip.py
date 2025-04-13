@@ -143,32 +143,9 @@ class WindyChip(QPushButton):
 
 
     def apply_dark_theme(self):
-        self.setStyleSheet("""
-        WindyChip {
-            border: 1px solid #555555;
-            border-radius: 16px;
-            background-color: #333333;
-            padding: 4px 8px;
-            color: #ffffff;
-        }
-        
-        Chip:hover {
-            background-color: #444444;
-            border-color: #666666;
-        }
-        
-        Chip:checked {
-            background-color: #0078d4;
-            border-color: #2b9fff;
-            color: #ffffff;
-        }
-        
-        Chip:disabled {
-            background-color: #2a2a2a;
-            border-color: #404040;
-            color: #808080;
-        }
-        """)
+        # 这里假设集成qfw组件深色模式代码，需根据实际qfw文档替换
+        qfw_dark_theme_code = "这里放置从qfw组件文档获取的深色模式代码"
+        self.setStyleSheet(qfw_dark_theme_code)
         
         self.deleteButton.setStyleSheet("""
             QToolButton {

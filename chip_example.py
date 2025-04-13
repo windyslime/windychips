@@ -116,8 +116,7 @@ class ChipExample(QMainWindow):
     
     def toggle_theme(self):
         # 切换主题
-        new_theme = Theme.LIGHT if isDarkTheme() else Theme.DARK
-        setTheme(new_theme)
+        setTheme(Theme.AUTO)
         self.apply_current_theme()
     
     def apply_current_theme(self):
