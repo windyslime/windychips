@@ -24,12 +24,12 @@ class WindyChip(QPushButton):
 
         # 创建布局
         self.layout = QHBoxLayout(self)
-        self.layout.setContentsMargins(8, 0, 8, 0)
-        self.layout.setSpacing(15)
+        self.layout.setContentsMargins(12, 0, 8, 0)
+        self.layout.setSpacing(8)
 
         # 创建文本标签
         self.textLabel = QLabel(text, self)
-        self.textLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.textLabel.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         # 创建删除按钮
         self.deleteButton = QToolButton(self)
@@ -128,15 +128,17 @@ class WindyChip(QPushButton):
         # 如果有图标，绘制图标
         if not self.icon().isNull():
             iconSize = QSize(16, 16)
-            iconRect = QRect(8, (self.height() - iconSize.height()) // 2, 
+            iconRect = QRect(12, (self.height() - iconSize.height()) // 2, 
                              iconSize.width(), iconSize.height())
             self.icon().paint(painter, iconRect)
+            # 为文本标签添加左边距，避免与图标重叠
+            self.textLabel.setContentsMargins(24, 0, 0, 0)
 
     def sizeHint(self):
         # 根据内容调整大小
-        width = self.textLabel.sizeHint().width() + self.deleteButton.width() + 24
+        width = self.textLabel.sizeHint().width() + self.deleteButton.width() + 40  # 增加间距
         if not self.icon().isNull():
-            width += 24  # 为图标增加空间
+            width += 28  # 为图标增加更多空间
         return QSize(width, 32)
 
 
