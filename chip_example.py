@@ -4,7 +4,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from qfluentwidgets import FluentIcon as fIcon, isDarkTheme, setTheme, Theme
 
-from chip import WindyChip, apply_dark_theme
+from chip import WindyChip
 
 
 class ChipExample(QMainWindow):
@@ -124,7 +124,7 @@ class ChipExample(QMainWindow):
         # 应用当前主题到所有Chip
         for chip in self.findChildren(WindyChip):
             if isDarkTheme():
-                apply_dark_theme(chip)
+                chip.apply_dark_theme()
             else:
                 chip.updateStyle()
         

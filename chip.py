@@ -142,45 +142,45 @@ class WindyChip(QPushButton):
         return QSize(width, 32)
 
 
-# 暗色主题样式
-def apply_dark_theme(windy_chip):
-    windy_chip.setStyleSheet("""
-    WindyChip {
-        border: 1px solid #555555;
-        border-radius: 16px;
-        background-color: #333333;
-        padding: 4px 8px;
-        color: #ffffff;
-    }
-    
-    Chip:hover {
-        background-color: #444444;
-    }
-    
-    Chip:checked {
-        background-color: #0c3e6a;
-        border-color: #0078d4;
-        color: #ffffff;
-    }
-    
-    Chip:disabled {
-        background-color: #2a2a2a;
-        border-color: #3a3a3a;
-        color: #707070;
-    }
-    """)
-    
-    windy_chip.deleteButton.setStyleSheet("""
-        QToolButton {
-            border: none;
-            background-color: transparent;
-            color: #aaaaaa;
-            font-size: 12px;
-        }
-        QToolButton:hover {
+    def apply_dark_theme(self):
+        self.setStyleSheet("""
+        WindyChip {
+            border: 1px solid #555555;
+            border-radius: 16px;
+            background-color: #333333;
+            padding: 4px 8px;
             color: #ffffff;
         }
-    """)
+        
+        Chip:hover {
+            background-color: #444444;
+            border-color: #666666;
+        }
+        
+        Chip:checked {
+            background-color: #0078d4;
+            border-color: #2b9fff;
+            color: #ffffff;
+        }
+        
+        Chip:disabled {
+            background-color: #2a2a2a;
+            border-color: #404040;
+            color: #808080;
+        }
+        """)
+        
+        self.deleteButton.setStyleSheet("""
+            QToolButton {
+                border: none;
+                background-color: transparent;
+                color: #aaaaaa;
+                font-size: 12px;
+            }
+            QToolButton:hover {
+                color: #ffffff;
+            }
+        """)
 
 
 # 示例代码，用于测试
